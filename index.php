@@ -39,6 +39,7 @@ if(!isset ($_SESSION["conectado"] )|| $_SESSION["conectado"] = false){
     <li><a href="data_select_where_orderby_html_table.php">Display filtered and sorted data in an HTML table (connect, select where orderby, disconnect)</a></li>
     <li><a href="data_delete.php">Delete user id=3 (connect, delete, disconnect)</a></li>
     <li><a href="data_update.php">Update the lastname of user id=2 (connect, update, disconnect)</a></li>
+    <li><a href="extra.php">Extra consultations</a></li>
 
     <br/>
 

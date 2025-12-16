@@ -8,7 +8,7 @@ include ("recoge.php");
 $value = recoge("valor");
 
 if($value == "insert"){
-    header("Location:insertarDatos.php");
+    header("Location:insertData.php");
 
 }elseif($value == "lastname"){
     header("Location:lastname.php");
