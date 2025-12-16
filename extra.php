@@ -2,7 +2,9 @@
 <?php include("sesion.php"); ?>
 
 <?php
+
 include("config.php");
+
 ?>
 
 <h1>Que tipo de consulta quieres realizar</h1>
