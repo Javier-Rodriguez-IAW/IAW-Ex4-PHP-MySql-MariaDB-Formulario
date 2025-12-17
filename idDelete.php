@@ -9,7 +9,7 @@ include("recoge.php");
 $id = recoge("id");
 
 if ($id == "") {
-    header("Location: borrar.php");
+    header("Location: id.php");
     exit();
 }
 

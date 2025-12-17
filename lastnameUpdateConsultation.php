@@ -10,7 +10,7 @@ $id = recoge("id");
 $lastname = recoge("lastname");
 
 if ($id == "" || $lastname == "") {
-    header("Location: actualizar.php");
+    header("Location: lastnameUpdate.php");
     exit();
 }
 

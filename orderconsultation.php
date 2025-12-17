@@ -11,7 +11,7 @@ $field = recoge("field");
 $order = recoge("order");
 
 if ($field == "" || $order == "") {
-    header("Location: VisualizarOrdenado.php");
+    header("Location: order.php");
     exit();
 }
 

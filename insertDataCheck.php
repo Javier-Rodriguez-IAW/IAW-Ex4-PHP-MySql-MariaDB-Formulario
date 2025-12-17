@@ -13,19 +13,19 @@ $usercode = recoge("usercode");
 $phone = recoge("phone");
 
 if ($firstname == "" || $lastname == "" || $email == "" || $usercode == "" || $phone == "") {
-    header("Location: insertar.php");
+    header("Location: insertData.php");
 }
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    header("Location: insertar.php");
+    header("Location: insertData.php");
 }
 
 if (!preg_match("/^u[0-9]{5}$/", $usercode)) {
-    header("Location: insertar.php");
+    header("Location: insertData.php");
 }
 
 if (strlen($phone) > 15) {
-    header("Location: insertar.php");
+    header("Location: insertData.php");
 }
 
 $sql = "INSERT INTO MyGuests (firstname, lastname, email, phone, user_code)
