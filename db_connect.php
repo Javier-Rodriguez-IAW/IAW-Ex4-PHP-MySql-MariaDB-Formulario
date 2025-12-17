@@ -1,5 +1,5 @@
+<?php include("./header.html"); ?>
 <?php include("sesion.php"); ?>
-<?php include ("cabecera.html"); ?>
 
 <?php
 
@@ -18,6 +18,6 @@ echo "Connected successfully";
 
 print "<br/>";
 print "<br/>";
-print "<a href='welcome.php'>Volver al inicio</a>";
+print "<a href='index.php'>Volver al inicio</a>";
 
 ?>

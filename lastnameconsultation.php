@@ -38,7 +38,7 @@ else {
 
 print "<br/>";
 print "<br/>";
-print "<a href='welcome.php'>Volver al inicio</a>";
+print "<a href='index.php'>Volver al inicio</a>";
 
 mysqli_close($conn);
 

@@ -35,8 +35,5 @@
 
     <p><input type="submit" value="Enviar"></p>
 
-<br/>
-<br/>
-<a href='welcome.php'>Volver al inicio</a>
 
 <?php include("./footer.html"); ?>
