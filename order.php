@@ -35,4 +35,8 @@
 
 </form>
 
+<br/>
+<br/>
+<a href='welcome.php'>Volver al inicio</a>
+
 <?php include("./footer.html"); ?>

@@ -1,38 +1,61 @@
 <?php include("sesion.php"); ?>
+<?php include("config.php"); ?>
 
-<?php
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">DATA</h2>
 
-include("config.php");
+    <?php
+    // Lanzamos la consulta con los nombres de columna correctos de tu tabla MyGuests
+    $sql = "SELECT id, firstname, lastname, phone, user_code FROM MyGuests ORDER BY lastname";
+    $result = mysqli_query($conn, $sql);
 
-//Lanzamos la consulta
-$sql = "SELECT id, firstname, lastname, phone, user_code FROM MyGuests ORDER BY lastname";
-$result = mysqli_query($conn, $sql);
+    if ($result == false) {
+        echo "<div class='alert alert-danger'>Error: " . $sql . "<br>" . mysqli_error($conn) . "</div>";
+    } 
+    elseif (mysqli_num_rows($result) > 0) {
+        $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-if ($result==false) {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
-elseif (mysqli_num_rows($result) > 0) {
+        // Abrimos la tabla con clases de Bootstrap para que se vea bien
+        echo "<div class='table-responsive'>";
+        echo "<table class='table table-striped table-hover table-bordered shadow-sm'>";
+        
+        // CORRECCIÓN: Definimos las 5 columnas en el encabezado
+        echo "<thead class='table-dark'>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Teléfono</th>
+                    <th>Código</th>
+                </tr>
+              </thead>";
+        
+        echo "<tbody>";
 
-  // Convert result to an array so foreach can be used
-  $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row["id"] . "</td>";
+            echo "<td>" . $row["firstname"] . "</td>";
+            echo "<td>" . $row["lastname"] . "</td>";
+            echo "<td>" . $row["phone"] . "</td>";
+            echo "<td>" . $row["user_code"] . "</td>";
+            echo "</tr>";
+        }
 
-  echo "<table border=1><tr><th>ID</th><th>Name</th></tr>";
+        echo "</tbody></table></div>";
 
-  foreach ($rows as $row) {
-   echo "<tr><td>".$row["id"]."</td><td>".$row["firstname"]." ".$row["lastname"]."</td><td>".$row["phone"]."</td><td>".$row["user_code"]."</td></tr>";
-  }
+    } else {
+        echo "<div class='alert alert-warning'>0 resultados encontrados.</div>";
+    }
 
-  echo "</table>";
+    mysqli_close($conn);
+    ?>
 
-} else {
-  echo "0 results";
-}
-
-print "<br/>";
-print "<br/>";
-print "<a href='index.php'>Volver al inicio</a>";
-
-mysqli_close($conn);
-?>
+    <div class="mt-4">
+        <a href="welcome.php" class="btn btn-primary">
+            <i class="bi bi-house-door"></i> Volver al inicio
+        </a>
+    </div>
+</div>
 
 <?php include("footer.html"); ?>

@@ -27,7 +27,11 @@
     <input type="submit"  name="submit" value="Iniciar Sesion"/>
     <input type="reset" value="Borrar"/>
 
-    </form>   
+    </form>
+    
+<br/>
+<br/>
+<a href='welcome.php'>Volver al inicio</a>
     
 </body>
 </html>

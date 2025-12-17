@@ -21,7 +21,7 @@ if($user == "" || $password == "" || $user != $userLogin || $password != $passwo
 }else{
         $_SESSION["conectado"] = true;  
 
-        header("Location:index.php");
+        header("Location:welcome.php");
 }
 
 if($value == "Si"){
@@ -30,7 +30,7 @@ if($value == "Si"){
 }elseif($value == "No"){
      $_SESSION["conectado"] = true;  
 
-    header("Location:index.php");
+    header("Location:welcome.php");
 }
 
 ?>

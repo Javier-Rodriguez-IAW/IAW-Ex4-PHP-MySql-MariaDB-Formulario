@@ -21,7 +21,7 @@ include("config.php");
 
     <p><input type="submit" value="Enviar"></p>
 
-    <a href='index.php'>Volver al inicio</a>";
+    <a href='welcome.php'>Volver al inicio</a>
 
 
 <?php include("./footer.html"); ?>
